@@ -1,0 +1,92 @@
+{% extends "base.html" %} {% block title %}Calendar - {{ year }}{% endblock %} {% block content
+%}
+<form method="POST">
+  <label for="year"></label>
+  <div class="formgroup">
+  <select name="year" id="year">
+    {% for x in range(2015, 2031) %}
+    <option>{{ x }}</option>
+    {% endfor %}
+  </select>
+    </div>
+  <br>
+  <button type="submit" class="btn - btn-primary">Submit</button>
+</form>
+  {% for index, days in months.items() %}
+<div class="container mb-3 mt-3">
+
+</div>
+<div class="container">
+  <table class="table table-striped table-bordered">
+    <thead>
+    <tr >
+      <th class="h3 table-dark" colspan="7">{{ index|string() }} {{ year }}</th>
+    </tr>
+    <tr>
+      <th scope="col" style="text-align:center; width:14.25%">Sunday</th>
+      <th scope="col" style="text-align:center; width:14.25%">Monday</th>
+      <th scope="col" style="text-align:center; width:14.25%">Tuesday</th>
+      <th scope="col" style="text-align:center; width:14.25%">Wednesday</th>
+      <th scope="col" style="text-align:center; width:14.25%">Thursday</th>
+      <th scope="col" style="text-align:center; width:14.25%">Friday</th>
+      <th scope="col" style="text-align:center; width:14.25%">Saturday</th>
+      </tr>
+  </thead>
+  <tr>
+    <td style="height:175px;"><div class="h2">{{ days[1][0]|first|safe }}</div>{{ days[1][0]|last|safe }}</td>
+    <td style="height:175px;"><div class="h2">{{ days[1][1]|first|safe }}</div>{{ days[1][1]|last|safe }}</td>
+    <td style="height:175px;"><div class="h2">{{ days[1][2]|first|safe }}</div>{{ days[1][2]|last|safe }}</td>
+    <td style="height:175px;"><div class="h2">{{ days[1][3]|first|safe }}</div>{{ days[1][3]|last|safe }}</td>
+    <td style="height:175px;"><div class="h2">{{ days[1][4]|first|safe }}</div>{{ days[1][4]|last|safe }}</td>
+    <td style="height:175px;"><div class="h2">{{ days[1][5]|first|safe }}</div>{{ days[1][5]|last|safe }}</td>
+    <td style="height:175px;"><div class="h2">{{ days[1][6]|first|safe }}</div>{{ days[1][6]|last|safe }}</td>
+  </tr>
+  <tr>
+    <td style="height:175px;"><div class="h3">{{ days[2][0]|first|safe }}</div>{{ days[2][0]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[2][1]|first|safe }}</div>{{ days[2][1]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[2][2]|first|safe }}</div>{{ days[2][2]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[2][3]|first|safe }}</div>{{ days[2][3]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[2][4]|first|safe }}</div>{{ days[2][4]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[2][5]|first|safe }}</div>{{ days[2][5]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[2][6]|first|safe }}</div>{{ days[2][6]|last|safe }}</td>
+  </tr>
+  <tr>
+    <td style="height:175px;"><div class="h3">{{ days[3][0]|first|safe }}</div>{{ days[3][0]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[3][1]|first|safe }}</div>{{ days[3][1]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[3][2]|first|safe }}</div>{{ days[3][2]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[3][3]|first|safe }}</div>{{ days[3][3]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[3][4]|first|safe }}</div>{{ days[3][4]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[3][5]|first|safe }}</div>{{ days[3][5]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[3][6]|first|safe }}</div>{{ days[3][6]|last|safe }}</td>
+  </tr>
+  <tr>
+    <td style="height:175px;"><div class="h3">{{ days[4][0]|first|safe }}</div>{{ days[4][0]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[4][1]|first|safe }}</div>{{ days[4][1]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[4][2]|first|safe }}</div>{{ days[4][2]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[4][3]|first|safe }}</div>{{ days[4][3]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[4][4]|first|safe }}</div>{{ days[4][4]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[4][5]|first|safe }}</div>{{ days[4][5]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[4][6]|first|safe }}</div>{{ days[4][6]|last|safe }}</td>
+  </tr>
+  <tr>
+    <td style="height:175px;"><div class="h3">{{ days[5][0]|first|safe }}</div>{{ days[5][0]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[5][1]|first|safe }}</div>{{ days[5][1]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[5][2]|first|safe }}</div>{{ days[5][2]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[5][3]|first|safe }}</div>{{ days[5][3]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[5][4]|first|safe }}</div>{{ days[5][4]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[5][5]|first|safe }}</div>{{ days[5][5]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[5][6]|first|safe }}</div>{{ days[5][6]|last|safe }}</td>
+  </tr>
+  <tr>
+    <td style="height:175px;"><div class="h3">{{ days[6][0]|first|safe }}</div>{{ days[6][0]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[6][1]|first|safe }}</div>{{ days[6][1]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[6][2]|first|safe }}</div>{{ days[6][2]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[6][3]|first|safe }}</div>{{ days[6][3]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[6][4]|first|safe }}</div>{{ days[6][4]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[6][5]|first|safe }}</div>{{ days[6][5]|last|safe }}</td>
+    <td style="height:175px;"><div class="h3">{{ days[6][6]|first|safe }}</div>{{ days[6][6]|last|safe }}</td>
+  </tr>
+</table>
+  </div>
+ {% endfor %} {% endblock %}
+

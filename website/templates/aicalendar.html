@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block title %}AI Calendar{% endblock %} {% block
+content %}
+<div class="h1 text-center mt-3">{{ year }}</div>
+<div class="mb-5" style="display: flex; flex-wrap: wrap">
+  {% for month in monthcalendar %} {% set outer_loop = loop %}{% set counter = namespace(value=0) %}
+  <div class="m-5">
+    <div class="h3 text-center">{{ month_names[loop.index0] }}</div>
+    <table class="table table-hover">
+      <tr>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+        <th>Sun</th>
+      </tr>
+      
+      {% for week in month %}
+      <tr>
+        {% for day in week %} 
+            {% if day == 0 %}
+            <td></td>
+            {% else %} {% set counter.value = counter.value + 1 %}
+                {% if current_day == day and outer_loop.index == current_month %}
+                <td class="text-danger fw-bold fs-5">{{ day }}</td>
+                {% else %}
+                <td>{{ day }}</td>
+                {% endif %}
+            {% endif %} 
+        {% endfor %}    
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
